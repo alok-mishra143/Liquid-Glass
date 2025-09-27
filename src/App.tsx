@@ -2,7 +2,6 @@ import MaxWidthWrapper from "./components/theme/MaxWidthWrapper";
 import LoremContent from "./components/TextContent/LoremContent";
 import LiquidButton from "./components/liquidGlass/LiquidButton";
 import Controls from "./components/Controls/Controls";
-import Background from "./components/Background/Background";
 import { useState, useEffect, useRef } from "react";
 
 export interface LiquidGlassControls {
@@ -10,7 +9,6 @@ export interface LiquidGlassControls {
   brightness: number;
   displacementScale: number;
   showLorem: boolean;
-  showBackground: boolean;
 }
 
 const App = () => {
@@ -23,7 +21,6 @@ const App = () => {
     brightness: 1.1,
     displacementScale: 10,
     showLorem: true,
-    showBackground: false,
   });
   const elementRef = useRef<HTMLDivElement>(null);
 
@@ -123,9 +120,6 @@ const App = () => {
   return (
     <MaxWidthWrapper>
       <div className="flex min-h-screen">
-        {/* Background */}
-        {/* Background */}
-        <Background show={controls.showBackground} color="#1a1a1a" />{" "}
         {/* Mobile Controls Toggle Button */}
         <button
           onClick={() => setShowControls(!showControls)}
@@ -195,7 +189,7 @@ const App = () => {
               brightness={controls.brightness}
               displacementScale={controls.displacementScale}
             >
-              <h1 className="font-bold text-sm md:text-base">Zerion</h1>
+              <h1 className="font-bold text-sm md:text-base">@Zerion</h1>
             </LiquidButton>
           </div>
         </div>

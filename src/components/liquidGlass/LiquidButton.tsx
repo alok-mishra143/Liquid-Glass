@@ -5,19 +5,19 @@ import React from "react";
 type LiquidButtonProps = {
   onClick?: () => void;
   children?: React.ReactNode;
-  className?: string; // allows custom styling
-  blur?: number; // allows customizing backdrop blur
-  brightness?: number; // allows customizing backdrop brightness
-  displacementScale?: number; // allows customizing displacement intensity
+  className?: string; 
+  blur?: number;
+  brightness?: number;
+  displacementScale?: number;
 };
 
 const LiquidButton: React.FC<LiquidButtonProps> = ({
   onClick,
   children,
   className,
-  blur = 2, // default backdrop blur
-  brightness = 1.1, // default backdrop brightness
-  displacementScale = 10, // default feDisplacementMap scale
+  blur = 2,
+  brightness = 1.1,
+  displacementScale = 10,
 }) => {
   const buttonStyle: React.CSSProperties = {
     filter: `drop-shadow(-8px -10px 20px #0000005f)`,
@@ -31,7 +31,7 @@ const LiquidButton: React.FC<LiquidButtonProps> = ({
     inset: "0",
     zIndex: 0,
     overflow: "hidden",
-    borderRadius: "0.125rem", // rounded-sm
+    borderRadius: "0.125rem", 
     boxShadow:
       "inset 6px 6px 0px -6px rgba(255, 255, 255, 0.7), inset 0 0 8px 1px rgba(255, 255, 255, 0.7)",
     pointerEvents: "none",

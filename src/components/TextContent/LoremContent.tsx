@@ -6,7 +6,6 @@ type LoremContentProps = {
 };
 
 const LoremContent = ({ words = 50, className }: LoremContentProps) => {
-  // Expanded lorem word bank (mix of classic + modern + filler words)
   const loremWords = [
     "lorem",
     "ipsum",
@@ -144,7 +143,6 @@ const LoremContent = ({ words = 50, className }: LoremContentProps) => {
     "possimus",
   ];
 
-  // Generate lorem ipsum text with sentence structure
   const generateLoremText = (count: number): string => {
     const wordsArr: string[] = [];
     for (let i = 0; i < count; i++) {
@@ -152,11 +150,10 @@ const LoremContent = ({ words = 50, className }: LoremContentProps) => {
       wordsArr.push(loremWords[randomIndex]);
     }
 
-    // Break into sentences of random length (4–12 words)
     const sentences: string[] = [];
     let i = 0;
     while (i < wordsArr.length) {
-      const sentenceLength = Math.floor(Math.random() * 9) + 4; // 4–12 words
+      const sentenceLength = Math.floor(Math.random() * 9) + 4;
       const sentenceWords = wordsArr.slice(i, i + sentenceLength);
       if (sentenceWords.length > 0) {
         let sentence = sentenceWords.join(" ");
@@ -172,9 +169,8 @@ const LoremContent = ({ words = 50, className }: LoremContentProps) => {
     return sentences.join(" ");
   };
 
-  // Random punctuation for variety
   const randomPunctuation = (): string => {
-    const marks = [".", ".", ".", "?", "!"]; // more chances for "."
+    const marks = [".", ".", ".", "?", "!"];
     return marks[Math.floor(Math.random() * marks.length)];
   };
 

@@ -113,7 +113,6 @@ const Controls: React.FC<ControlsProps> = ({
             brightness: 1.1,
             displacementScale: 10,
             showLorem: true,
-            showBackground: false,
           })
         }
         className="w-full"
